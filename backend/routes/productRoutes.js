@@ -12,7 +12,6 @@ router.get(
   expressAsyncHandler(async (req, res) => {
     // empty object => request all
     const products = await Product.find({});
-
     res.json(products);
   })
 );
