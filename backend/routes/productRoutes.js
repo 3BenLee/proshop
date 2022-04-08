@@ -10,13 +10,14 @@ const router = express.Router();
 router.get(
   '/',
   expressAsyncHandler(async (req, res) => {
+    // empty object => request all
     const products = await Product.find({});
 
     res.json(products);
   })
 );
 
-// @desc   Fetch all Products
+// @desc   Fetch single Product
 // @route  Get api/products/:id
 // @access Public
 router.get(
@@ -27,7 +28,8 @@ router.get(
     if (product) {
       res.json(product);
     } else {
-      res.status(404).json({ message: 'Product Not Found' });
+      res.status(404);
+      throw new Error('Product not found');
     }
   })
 );
