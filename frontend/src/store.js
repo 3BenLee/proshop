@@ -14,6 +14,7 @@ const reducer = combineReducers({
   cart: cartReducer,
 });
 
+// We need to parse it before we can use it since local storage only deals with strings
 const cartItemsFromLocalStorage = localStorage.getItem('cartItems')
   ? JSON.parse(localStorage.getItem('cartItems'))
   : [];

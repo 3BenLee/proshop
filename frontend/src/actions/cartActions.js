@@ -17,9 +17,9 @@ export const addToCart = (id, quantity) => async (dispatch, getState) => {
     },
   });
   /**
-   * Save the current cart items to local storage
-   * Need to stringify since we recieve a js object from getState()
-   * and local storage only deals with strings
+   * Save the current cart items to local storage.
+   * Need to stringify since we recieve a js object from getState().
+   * Local storage only deals with strings.
    */
   localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
 };

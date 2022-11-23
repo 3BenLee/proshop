@@ -16,6 +16,7 @@ import Message from '../components/Message';
 import { listProductDetails } from '../actions/productActions';
 
 const ProductScreen = ({ match, history }) => {
+  // match and history are destructured from props
   const [quantity, setQuantity] = useState(1);
 
   const dispatch = useDispatch();
